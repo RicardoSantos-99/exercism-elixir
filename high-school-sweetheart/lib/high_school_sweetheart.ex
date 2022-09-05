@@ -14,8 +14,6 @@ defmodule HighSchoolSweetheart do
     |> String.split()
     |> Enum.map(&initial/1)
     |> Enum.join(" ")
-
-    # Please implement the initials/1 function
   end
 
   def pair(full_name1, full_name2) do

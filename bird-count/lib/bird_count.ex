@@ -23,15 +23,11 @@ defmodule BirdCount do
     sum(list)
   end
 
-  def sum([]), do: 0
-
-  def sum([head | tail]), do: head + sum(tail)
-
   def busy_days(list) do
     length(filter(list, &(&1 >= 5)))
   end
 
-  def filter([head | tail], func) do
+  defp filter([head | tail], func) do
     result = func.(head)
 
     if result do
@@ -41,5 +37,9 @@ defmodule BirdCount do
     end
   end
 
-  def filter([], _func), do: []
+  defp filter([], _func), do: []
+
+  defp sum([]), do: 0
+
+  defp sum([head | tail]), do: head + sum(tail)
 end
